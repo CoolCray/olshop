@@ -43,9 +43,9 @@ export const StoreModal = () => {
         onClose={storeModal.OnClose}
         >
         <div>
-            <div>
+            <div className="py-4">
                 <Form {...form}>
-                    <form>
+                    <form onSubmit={form.handleSubmit(onSubmit)} className=" space-y-4 ">
                         <FormField
                         control={form.control}
                         name="name"
@@ -58,10 +58,9 @@ export const StoreModal = () => {
                                 <FormMessage />
                             </FormItem>
                         )}/>
-                        <div>
-                            <Button>
-                                Cancel
-                            </Button>
+                        <div className="flex items-center justify-between w-full">
+                            <Button variant={"outline"} onClick={storeModal.OnClose}>Cancel</Button>
+                            <Button type="submit">Continue</Button>
                         </div>
                     </form>
                     
